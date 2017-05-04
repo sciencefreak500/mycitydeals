@@ -1,0 +1,84 @@
+<div>
+    <img src="img/logo.png" style="height:161px;margin:0;">
+</div>
+
+
+      <ul style="float:left">
+        <li style="display:block;"><a ng-click="selector(0)">Manage</a></li>
+       <!--  <li style="display:block;"><a ng-click="selector(5)">Statistics</a></li> -->
+        <li style="display:block;"><a ng-click="selector(1)">Billing</a></li>
+        <li style="display:block;"><a ng-click="selector(2)">Account Info</a></li>
+      </ul>
+
+ <h2>{{selection.tab}}</h2>
+     <div class="mainLoad">
+
+        
+
+
+<!--Tab for Manage-->
+        <div ng-if="selection.tab == 'Manage'">
+            <button class="button " ng-click="addCoupon()" >Add New</button>
+
+
+         <!-- 
+
+        https://codepen.io/jealeat96/pen/mPBGbG
+         -->
+         <div ng-repeat="coupon in list">
+         <p ng-if="list.length == 0">No coupons created. Press Add New to get started!</p>
+        <div class="overallCoupon" >
+
+        <h1 ng-if="coupon.edit == 'false' && coupon.percent > 0" class="percentageIcon">{{coupon.percent}}% off</h1>
+          <img ng-if="coupon.edit == 'false'" style="display:inline-block;" src="{{coupon.image}}" height="161" width="161">   
+
+          <div ng-if="coupon.edit == 'true'"><input class="percentageInput" type="number" placeholder="%" ng-model="coupon.percent" /><span class="percentIcon">%</span></div>
+
+          
+          <h2 class="couponHeader" style="margin-left:33px;">
+          
+            <label ng-if="coupon.edit == 'false'" for="dtitle">{{coupon.title}}</label>
+            <input ng-model="coupon.title" ng-change="list.$save(coupon)" ng-if="coupon.edit == 'true'" type="text" id="dtitle" name="dtitle" placeholder="Discount Title" value="{{coupon.title}}" style="font-size: 18px;">
+
+          
+
+          <p ng-if="coupon.edit == 'false'" class="couponParagraph">{{coupon.description}}</p>
+            <textarea ng-model="coupon.description" ng-change="list.$save(coupon)" ng-if="coupon.edit == 'true'" type="text" class="eoko-text-area" id="dparagraph" name="dparagraph" placeholder="Discount Description" style="font-size: 18px;width: 100%;height: auto;">{{coupon.description}}</textarea>
+
+          </h2>
+          <div style="margin: 16px;">
+            <div ng-if="coupon.edit == 'false'" style="padding: 5px 15px;border: 1px solid green;background-color: lightgreen;color: black;height: 33px;width: 161px;text-align: center;">{{coupon.code}}</div>
+
+            <input ng-model="coupon.code" ng-change="list.$save(coupon)" value="{{coupon.code}}" ng-if="coupon.edit == 'true'" type="text" id="dcode" name="dcode" placeholder="Code" style="font-size: 18px;font-size: 18px;width: 161px;display: block;">
+          </div>
+          
+
+          <a ng-if="coupon.edit == 'true'" ng-click="setDone($index)" class="couponEditLink">Done</a>
+
+           <a ng-if="coupon.edit == 'false'" ng-click="setEdit($index)" class="couponEditLink">Edit</a>
+
+           <a ng-if="coupon.edit == 'true'" ng-click="removeItem($index)" class="couponEditLink deleteLink">Delete Item</a>
+        </div>
+        </div>
+
+        </div>
+
+
+<!--Tab for Billing-->
+        <div ng-if="selection.tab == 'Billing'">
+          Coming soon!
+        </div>
+
+<!--Tab for Account Info-->
+        <div ng-if="selection.tab == 'Account Info'">
+          
+          <div style="margin:0 23%">
+            <input ng-repeat="item in account" type="text" value="{{item.$value}}">
+
+          </div>
+
+        </div>
+       
+     </div>
+
+  

@@ -1,0 +1,70 @@
+<br><br><br>
+<img src="img/logo.png" style="height:90%;">
+
+	<div ng-if="errorpopup != '' && thankyou == false " class="button errormessage">{{errorpopup}}</div>
+	
+  <form ng-if="thankyou == false" style="margin:0 10%">
+
+  	<div style="margin:0 23%">
+	  	<h2 style="margin-left: -66px;">Company Information</h2>
+	    <label for="companyName">Company Name*</label>
+	    <input ng-model="info.companyName" type="text" id="companyName" name="companyName" placeholder="The Company's Name..">
+
+	    <label for="companyName">Industry/Sector*</label>
+	    <input ng-model="info.industry" type="text" id="industry" name="industry" placeholder="Business industry..">
+
+	    <label for="address">Address*</label>
+	    <input ng-model="info.address" type="text" id="address" name="address" placeholder="Address">
+
+	    <label for="address2">Address 2</label>
+	    <input ng-model="info.address2" type="text" id="address2" name="address2" placeholder="Address - Additional">
+
+	    <label for="city">City*</label>
+	    <input ng-model="info.city" type="text" id="city" name="city" placeholder="City">
+
+	    <label for="state">State*</label>
+	    <input ng-model="info.state" type="text" id="state" name="city" placeholder="State">
+
+	    <label for="zip">Zip*</label>
+	    <input ng-model="info.zip" type="text" id="zip" name="zip" placeholder="Zip">
+    </div>
+    <hr>
+
+    <h2 style="margin-left: -33px;">Primary Contact</h2>
+    <label for="firstname">First Name*</label>
+    <input ng-model="info.firstname" type="text" id="firstname" name="firstname" placeholder="Your First Name">
+
+    <label for="lastname">Last Name*</label>
+    <input ng-model="info.lastname" type="text" id="lastname" name="lastname" placeholder="Your Last Name">
+
+    <label for="title">Title or Position</label>
+    <input ng-model="info.title" type="text" id="title" name="title" placeholder="Your Title or Position">
+
+    <br><br>
+
+    <label for="email">Email*</label>
+    <input ng-model="info.email" type="email" id="email" name="email" placeholder="Your Email">
+
+    <label for="phonenumber">Contact Number*</label>
+    <input ng-model="info.phonenumber" type="tel" id="phonenumber" name="phonenumber" placeholder="Your Contact Number">
+
+	<hr>
+    
+	<div style="margin:0 23%">
+    <label for="password">Password*</label>
+    <input ng-model="signed.password" ng-change="checkMatch()" type="password" id="password" name="password" placeholder="Password"><span class="passcheck" ng-if="matching">✓</span>
+
+    <label for="confirmpass">Confirm Password*</label>
+    <input ng-model="signed.matching" ng-change="checkMatch()" type="password" id="confirmpass" name="confirmpass" placeholder="Confirm Password"><span class="passcheck" ng-if="matching">✓</span>
+    </div>
+
+  	<!-- <p style="float:right;">* fields are required</p> -->
+  	<div >
+	    <button style="margin: 0 auto;" class="button" ng-disabled="!matching" ng-click="submitInfo()" ><span>Sign Up</span></button>
+    </div>
+    <br><br><br>
+  </form>
+
+
+  
+

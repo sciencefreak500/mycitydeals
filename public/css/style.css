@@ -1,0 +1,403 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: 20px;
+    border-radius: 6px;
+    font-size: 2em;
+}
+
+li a:hover {
+    background-color: #d9a537;
+}
+
+html{
+  color: black;
+}
+
+td, th {
+    text-align: left;
+    padding: 33px;
+}
+
+/*h2{
+  margin-bottom: 33px;
+}*/
+
+/* Page Style */
+body{
+  /*background-image: url(../img/main_background.png);*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+	font-size: 14px;
+	font-family: sans-serif;
+	line-height: 20px;
+}
+
+p{
+	margin-bottom: 0.3em;
+}
+.center,
+img.center {
+	text-align: center;
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#centered {
+    width: 800px;
+    height: 280px;
+    position: relative;
+    top: 0%;
+    margin: 0 auto;
+}
+h1{
+	text-align: center;
+	font-size: 35px;
+}
+img{
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+p{
+	text-align: center;
+}
+
+
+.button {
+  display: block;
+  border-radius: 4px;
+  background-color: #d9a537;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  color: black;
+}
+
+.button:disabled{
+  color:grey;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color: black;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonAddQuestion {
+    padding: 10px;
+    background-color: steelblue;
+    border: 1px solid rgb(162, 163, 178);
+    display: inline-block;
+    float:right;
+}
+
+.buttonAddQuestion:hover {
+  background-color: blue;
+}
+
+.answerHolder{
+  position: relative;
+    left: 85%;
+    display: inline;
+}
+
+.buttonRemove{
+  background-color: #b44646;
+}
+
+.buttonRemove:hover {
+  background-color: red;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=password],
+input[type=time],
+input[type=date],
+ select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+}
+
+.errormessage {
+	font-size: inherit;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #d95b37;
+    max-width: 61%;
+    width: inherit;
+}
+
+
+.appendTitle{
+  position: relative;
+    display: inline;
+    bottom: 73px;
+    float: right;
+    right: 150px;
+    font-size: large;
+}
+
+.passcheck{
+    float: right;
+    position: relative;
+    background: green;
+    padding: 5px 10px;
+    border-radius: 5px;
+    bottom: 45px;
+    left: 36px;
+}
+
+.mainLoad{
+  position: absolute;
+  margin-left: 222px;
+    padding: 10px;
+    /*background-color: rgba(255, 255, 255, 0.23);*/
+    height: 75vh;
+    width: 75vw;
+    overflow-y: auto;
+
+}
+
+.approveDiv{
+      width: 292px;
+    display: inline-flex;
+    position: absolute;
+    margin-top: -25px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.inputfield{
+  margin-left: 0 10%;
+}
+
+.showCouponCode {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    background: #fff;
+    border-left: 5px solid grey;
+    cursor: pointer;
+    outline: none;
+}
+
+.overallCoupon{
+  display: inline-flex;
+border: 1px solid Salmon;
+padding: 20px 20px 0px;
+max-width: 1000px;
+max-height: 250px;
+}
+
+.couponParagraph{
+  line-height: 28px;
+font-size: 18px;
+text-align: left;
+font-family: Arial;
+color:black;
+overflow: auto;
+height: 75%;
+}
+
+.couponHeader{
+  color: Salmon;
+  font-weight: bolder;
+}
+
+.couponEditLink{
+font-size: 20px;
+color: rgb(217, 165, 55);
+}
+
+
+
+.deleteLink{
+  position: absolute;
+margin-top: 6.5em;
+margin-left: 42em;
+}
+
+.percentageIcon{
+  position: absolute;
+  width: 122px;
+  height: 108px;
+  margin-left: 22px;
+  margin-top: 33px;
+  line-height: 1em;
+  color: #d9a537;
+  background-color: white;
+  border-radius: 33px;
+  font-size: 46px;
+}
+
+.percentageInput{
+  width: 126px;
+height: 42px;
+color: #d9a537;
+font-size: 37px;
+text-align: center;
+}
+
+.percentIcon{
+  position: relative;
+  left: 133px;
+  bottom: 33px;
+  font-size: 20px;
+  color: #d9a537;
+}
+
+
+/*ripped from eoko.app.css*/
+
+
+.eoko-notification-avatar {
+  border-radius: 80px;
+  width: 80px;
+  height: 80px;
+  margin: 0em auto;
+  background-position-x: 50%;
+  background-size: cover;
+  position: absolute;
+  margin-left: -100px;
+  margin-top:16px; }
+
+  .eoko-text-thin, .eoko-text-button-nav {
+  font-family: "San Francisco Display";
+  font-weight: 200;
+  color: #FFFFFF; }
+
+  .eoko-text-ultralight {
+  font-family: "San Francisco Display";
+  font-weight: 100;
+  color: #FFFFFF; }
+
+  .eoko-text-thin, .eoko-text-button-nav {
+  font-family: "San Francisco Display";
+  font-weight: 200;
+  color: #FFFFFF; }
+
+
+  .item-thumbnail-left,
+.item-thumbnail-left .item-content {
+  padding-top: 8px;
+  padding-left: 106px;
+  min-height: 100px; }
+  .item-thumbnail-left > img:first-child,
+  .item-thumbnail-left .item-image,
+  .item-thumbnail-left .item-content > img:first-child,
+  .item-thumbnail-left .item-content .item-image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%; }
+
+.item-avatar.item-complex,
+.item-avatar-left.item-complex,
+.item-thumbnail-left.item-complex {
+  padding-top: 0;
+  padding-left: 0; }
+
+.eoko-button-action-event-join, .eoko-button-action-event-popup-join {
+  border-color: none;
+  background-color: #F57C00;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 30px;
+  font-size: 20px;
+  float: right;
+  margin:0 5px; }
+  .eoko-button-action-event-join.hover, .hover.eoko-button-action-event-popup-join {
+    background-color: #cc6700;
+    transition: all 0.3s ease; }
+  .eoko-button-action-event-join.active, .active.eoko-button-action-event-popup-join, .eoko-button-action-event-join.activated, .activated.eoko-button-action-event-popup-join {
+    background-color: #763b00; }
+
+    .eoko-text-area {
+  padding: 10px;
+  border-radius: 5px;
+  width: calc(100% - 6em);
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.15);
+  height: 10em;
+  resize: none; }
+
+  .eoko-text-regular, .eoko-button-text-selected, .eoko-text-input-form {
+  font-family: "San Francisco Display";
+  font-weight: 400;
+  color: #FFFFFF; }
+
+  .eoko-text-input-form {
+  padding-bottom: 20px; }
+
