@@ -1,17 +1,25 @@
-<div>
-    <img src="img/logo.png" style="height:161px;margin:0;">
-</div>
+<div class="eoko-wrapper-portalPage">
 
 
-      <ul style="float:left">
-        <li style="display:block;"><a ng-click="selector(0)">Manage</a></li>
-       <!--  <li style="display:block;"><a ng-click="selector(5)">Statistics</a></li> -->
-        <li style="display:block;"><a ng-click="selector(1)">Billing</a></li>
-        <li style="display:block;"><a ng-click="selector(2)">Account Info</a></li>
-      </ul>
+    <!--top horizontal navigation bar-->
 
- <h2>{{selection.tab}}</h2>
-     <div class="mainLoad">
+    <div class="eoko-wrapper-horizontal-nav">
+       <img src="img/logo.png" style="height:161px;margin:0;">
+    </div>
+
+
+    <!--vertical navigation bar-->
+    <div class="eoko-wrapper-vertical-nav">
+        <nav class="eoko-vertical-nav">
+            <a id="residentsTab" ng-click="selector(0)">Manage</a><br>
+            <a id="approveTab" ng-click="selector(1)">Billing</a><br>
+            <a id="statisticsTab" ng-click="selector(2)">Account Info</a><br>
+        </nav>
+    </div>
+
+
+
+     <div id="mainContent" class="eoko-portal-content-wrapper">
 
         
 
@@ -80,5 +88,9 @@
         </div>
        
      </div>
+
+  
+
+</div>
 
   
