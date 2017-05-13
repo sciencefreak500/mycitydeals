@@ -29,7 +29,7 @@ angular.module('app.controllers', [])
                     title:"",
                     email:"",
                     phonenumber:"",
-                    industry:""
+                    industry:"Beauty"
                 };
 
     $scope.errorpopup = "";
@@ -234,11 +234,11 @@ angular.module('app.controllers', [])
             $scope.errorpopup = "Please enter your Last Name";
             return;
         }
-        if($scope.info.industry == "" || $scope.info.industry == " ")
+        /*if($scope.info.industry == "" || $scope.info.industry == " ")
         {
             $scope.errorpopup = "Please enter your Industry/Sector";
             return;
-        }
+        }*/
     	if($scope.info.email == "" || $scope.info.email == " ")
     	{
     		$scope.errorpopup = "Please enter your email";
@@ -431,6 +431,13 @@ var ref = firebase.database().ref("Categories").child(usr.photoURL).child(usr.di
 $scope.list = $firebaseArray(ref);
 $scope.list.$loaded()
   .then(function(x) {
+
+    /*for(var i in x)
+    {
+        x[i].fromTime = new Date(x[i].fromTime);
+        x[i].toTime = new Date(x[i].toTime);
+    }*/
+
     console.log($scope.list);
     
   })
@@ -454,6 +461,8 @@ $scope.account.$loaded()
 
 $scope.newImage = "";
 $scope.selection = {tab:"Manage"};
+$scope.errorpopup = "";
+
 
 $scope.selector = function(num)
 {
@@ -499,6 +508,18 @@ function b64toBlob(b64Data, contentType, sliceSize) { //blobs galore
 //var contentType = 'image/jpeg';
 //var blob = b64toBlob(imageData, contentType);
         
+$scope.fromTimeString = function(number,index)
+{
+    $scope.list[index].fromTime = number.toTimeString().substring(0,8);
+    $scope.list.$save(index); 
+};
+
+$scope.toTimeString = function(number,index)
+{
+    $scope.list[index].toTime = number.toTimeString().substring(0,8);
+    $scope.list.$save(index);    
+};
+
 
 $scope.addCoupon = function()
 {
@@ -510,7 +531,10 @@ $scope.addCoupon = function()
         description:"",
         code:"",
         edit:'true',
-        percent:""
+        percent:"",
+        tag:"",
+        toTime: "",
+        fromTime: ""
     }).then(function(ref) {
       console.log("new coupon added.")
     });
@@ -519,11 +543,49 @@ $scope.addCoupon = function()
 
 $scope.setDone = function(index)
 {
-    $scope.list[index].edit = 'false';
-    $scope.list.$save(index).then(function(ref)
+    
+   
+    if($scope.list[index].tag == "" || $scope.list[index].tag == " ")
     {
-        console.log("finished editing list item ", index);
-    });
+      $scope.errorpopup = "Category tag must be filled out.";
+    return;
+    }
+    else if($scope.list[index].fromTime == "" || $scope.list[index].fromTime == " ")
+    {
+      $scope.errorpopup = "From time must be filled out.";
+    return;
+    }
+    else if($scope.list[index].toTime == "" || $scope.list[index].toTime == " ")
+    {
+      $scope.errorpopup = "To time must be filled out.";
+    return;
+    }
+    else if($scope.list[index].title == "" || $scope.list[index].title == " ")
+    {
+      $scope.errorpopup = "The title must be filled out.";
+    return;
+    }
+    else if($scope.list[index].description == "" || $scope.list[index].description == " ")
+    {
+      $scope.errorpopup = "The description must be filled out.";
+    return;
+    }
+    else if($scope.list[index].code == "" || $scope.list[index].code == " ")
+    {
+      $scope.errorpopup = "The code must be filled out.";
+    return;
+    }
+    else
+    {
+       $scope.list[index].edit = 'false';
+        $scope.list.$save(index).then(function(ref)
+        {
+            console.log("finished editing list item ", index);
+             $scope.errorpopup = "";
+        }); 
+    }
+    
+    
 };
 
 $scope.setEdit = function(index)
